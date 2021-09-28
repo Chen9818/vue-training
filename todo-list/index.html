@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        html,body{
+            width: 100%;
+        }
+        .work{
+            /* width: 100%; */
+            text-align: center;
+        }
+        .list{
+            text-align: center;
+        }
+        .list li{
+            margin: 10px 0;
+            padding-bottom: 5px;
+            border-bottom: 1px solid black;
+        }
+        .list li label{
+            margin: 0 75px 0 0;
+        }
+        /* .list li input:checked label{
+            text-decoration: line-through;
+        } */
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="work">
+            <h1>todo list</h1>
+            <input type="text" v-model='newtodo' @keyup.enter='creattodo'/>
+        </div>
+        <ul class="list">
+            <li v-for='todo in todos' :data-id='todo.id' :class='{complete:todo.complete}'>
+                <input type="checkbox" id="box" name="number" v-model='todo.complete'>
+                <label for="box">{{ todo.content }}</label>
+                <button>X</button>
+            </li>
+        </ul>
+    </div>  
+</body>
+<script src="https://unpkg.com/vue@next"></script>
+<script src="todolist.js"></script>
+</html>

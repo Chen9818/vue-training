@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'
+        integrity='sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=='
+        crossorigin='anonymous'></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            background-color: #aaaa00;
+        }
+
+        .container {
+            width: 80%;
+        }
+
+        .logo {
+            width: 100%;
+        }
+
+        .logo img {
+            width: 100%;
+        }
+
+        .txt {
+            background-color: pink;
+        }
+
+        .txt h1 {
+            text-align: center;
+        }
+    </style>
+    <script>
+        let data = {
+            src: 'green.png',
+            title: '123123123123123'
+        }
+        $(function () {
+            $('img').attr('src', data.src)
+            $('h1').text(data.title)
+        })
+
+    </script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="" alt="">
+        </div>
+        <div class="txt">
+            <h1></h1>
+        </div>
+    </div>
+</body>
+
+</html>
