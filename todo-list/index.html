@@ -19,19 +19,19 @@
             text-align: center;
         }
         .list{
-            text-align: center;
+            width: 250px;
+            margin: 0 auto;
         }
         .list li{
+            display: flex;
+            justify-content:space-between;
             margin: 10px 0;
             padding-bottom: 5px;
             border-bottom: 1px solid black;
         }
-        .list li label{
-            margin: 0 75px 0 0;
-        }
-        /* .list li input:checked label{
+        .list .complete{
             text-decoration: line-through;
-        } */
+        }
     </style>
 </head>
 <body>
@@ -41,10 +41,10 @@
             <input type="text" v-model='newtodo' @keyup.enter='creattodo'/>
         </div>
         <ul class="list">
-            <li v-for='todo in todos' :data-id='todo.id' :class='{complete:todo.complete}'>
+            <li v-for='(todo, index) in todos' :data-id='todo.id' >
                 <input type="checkbox" id="box" name="number" v-model='todo.complete'>
-                <label for="box">{{ todo.content }}</label>
-                <button>X</button>
+                <label for="box" :class='{complete:todo.complete}'>{{ todo.content }}</label>
+                <button @click='deletetodo(todo,index)'>X</button>
             </li>
         </ul>
     </div>  
