@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        html,body,#app{
+            height: 100%;
+            background-color: darkgray;
+        }
+        .container{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .title{
+            padding: 5px;
+            border-radius: 5%;
+            background-color: white;
+        }
+        .title .input{
+            padding: 35px;
+            border-radius: 5%;
+            font-size: 30px;
+            background-color: cornflowerblue;
+        }
+        .title .menu{
+            margin-top: 20px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="container">
+            <div class="title">
+                <div class="input">
+                    {{ name }}，
+                    {{ sex }}性，
+                    年齡為{{ age }}，
+                    <br/>{{favor.length ? '喜歡' : ''}} {{ favor.join('，') }}，
+                    {{ marry ? '已':'未'}}婚
+                </div>
+                <div class="menu">
+                    <table>
+                        <tr>
+                            <td class="title">
+                                姓名:
+                            </td>
+                            <td>
+                                <input v-model='name'>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="title">
+                                性別:
+                            </td>
+                            <td>
+                                <input type="radio" value="男"  v-model='sex'/>男
+                                <input type="radio" value="女" v-model='sex'/>女
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="title">
+                                年齡:
+                            </td>
+                            <td>
+                                <select v-model='age'>
+                                    <option>20以下</option>
+                                    <option>20~30歲</option>
+                                    <option>30~40歲</option>
+                                    <option>40以上</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="title">
+                                興趣:
+                            </td>
+                            <td>
+                                <input type="checkbox" value='打電玩' v-model='favor'/>打電玩
+                                <input type="checkbox" value='看電影' v-model='favor'/>看電影
+                                <input type="checkbox" value='旅遊' v-model='favor'/>旅遊
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="title">
+                                結婚:
+                            </td>
+                            <td>
+                                <input type="checkbox" v-model='marry'/>已婚
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://unpkg.com/vue@next"></script>
+<script src="login.js"></script>
+</html>
